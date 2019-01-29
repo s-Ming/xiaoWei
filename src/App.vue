@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-<Footer></Footer>
+    <XHeader></XHeader>
+    <router-view></router-view>
+    <XFooter></XFooter>
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import Footer from './components/common/Footer.vue'
+import XFooter from "./components/common/Footer.vue";
+import XHeader from "./components/common/Header.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    Footer
+    XFooter,
+    XHeader
   }
-}
+};
 </script>
 
 <style>
+/* 引入全局字体图标 */
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

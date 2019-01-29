@@ -41,4 +41,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 安装less和less-loader
 在index.html页面设置根字体大小
 
+在main.js中引入字体图标并
+在main.js引入全局重置样式
+
+在main.js中引入router并挂载到实例上
+安装Vue-router模块
 
