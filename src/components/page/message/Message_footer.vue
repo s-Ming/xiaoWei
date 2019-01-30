@@ -1,6 +1,6 @@
 <template>
     <div>
-        我的
+        底部
     </div>
 </template>
 <script>

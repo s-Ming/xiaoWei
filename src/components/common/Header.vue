@@ -2,9 +2,21 @@
   <div class="header">
     <div class="header_one" v-show="show1">
       <span v-text="titles"></span>
-      <i class="fa fa-search" aria-hidden="true" @click="search"></i>
+      <i
+        class="fa fa-search"
+        aria-hidden="true"
+        @click="search"
+        @touchstart="touchstart($event)"
+        @touchend="touchend($event)"
+      ></i>
       <div>
-        <i class="fa fa-plus-circle" aria-hidden="true" @click="add"></i>
+        <i
+          class="fa fa-plus-circle"
+          aria-hidden="true"
+          @click="add"
+          @touchstart="touchstart($event)"
+          @touchend="touchend($event)"
+        ></i>
         <ul class="tanchuan" v-show="tanchuan">
           <li>
             <i class="fa fa-comment-o" aria-hidden="true"></i>
@@ -44,7 +56,7 @@ export default {
       className: "",
       show1: true,
       show2: false,
-      tanchuan: false
+      tanchuan: false,
     };
   },
   //   props: ["title"],
@@ -56,6 +68,15 @@ export default {
     },
     add() {
       this.tanchuan = !this.tanchuan;
+    },
+
+    //给事件源对象添加类名来设置点击高亮效果
+    touchstart(e) {
+      // console.log(e.target);
+      e.target.classList.add("gaoliang");
+    },
+    touchend(e) {
+      e.target.classList.remove("gaoliang");
     }
   },
   created() {
@@ -117,6 +138,7 @@ export default {
       align-items: center;
       justify-content: center;
     }
+
     div {
       width: 15%;
       height: 100%;
@@ -127,6 +149,7 @@ export default {
       i {
         .fs(16);
         height: 100%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -144,7 +167,7 @@ export default {
           .h(50);
           span {
             .fs(14);
-            widht: 70%;
+            width: 70%;
             color: #fff;
             border-bottom: 1px solid #eee;
             height: 100%;
@@ -182,5 +205,8 @@ export default {
       justify-content: center;
     }
   }
+}
+.gaoliang {
+  background: #ccc;
 }
 </style>
